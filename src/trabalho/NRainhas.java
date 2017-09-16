@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class NRainhas {
 	
-	public final int N = 10;
+	public final int N = 20;
 	int[][] vet;
 	int[][] pesos;
 	
@@ -140,11 +140,10 @@ public class NRainhas {
 		while(!terminou()) {
 			min = minPeso();
 			while(min == pesoHeuristica(this.vet)) {
-				System.out.println("enttou");
 				this.eraseAll();
 				this.generateRandomBoard();
 				this.montarPesos();
-				this.printBoard();
+				//this.printBoard();
 				min = minPeso();
 			}
 			achou = false;
@@ -163,19 +162,22 @@ public class NRainhas {
 				
 			}
 			this.montarPesos();
-			this.printBoard();
+			//this.printBoard();
 		}
-		this.printBoard();
+		//this.printBoard();
 	}
 	
 	
 	public static void main(String[] args) {
+		long startTime = System.nanoTime();
 		NRainhas nr = new NRainhas();
 		nr.eraseAll();
 		nr.generateRandomBoard();
 		nr.montarPesos();
 		nr.hillClimbing();
-		System.out.println(nr.pesoHeuristica(nr.vet));
+		long endTime = System.nanoTime();
+		nr.printBoard();
+		System.out.println((endTime - startTime)/1000000.0 + " ms");
 	}
 	
 }
