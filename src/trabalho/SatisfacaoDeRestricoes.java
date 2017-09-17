@@ -6,4 +6,5 @@ public class SatisfacaoDeRestricoes {
 	String[]  nacionalidade = {"Ingles", "Espanhol", "Noruegues", "Ucraniano", "Japones"};
 	String[] bebida = {"Suco", "Cha", "Cafe", "Leite", "Agua"};
 	String[] animal = {"Zebra", "Cachorro", "Raposa", "Caramujo", "Cavalo"};
+	int[][] adjacentes = new int[5][5];
 }
